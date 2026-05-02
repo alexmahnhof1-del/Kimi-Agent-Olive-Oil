@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 24% 95%;
+    --foreground: 30 12% 9%;
+    --card: 36 22% 92%;
+    --card-foreground: 30 12% 9%;
+    --popover: 40 24% 95%;
+    --popover-foreground: 30 12% 9%;
+    --primary: 43 72% 42%;
+    --primary-foreground: 40 24% 95%;
+    --secondary: 36 22% 92%;
+    --secondary-foreground: 30 12% 9%;
+    --muted: 36 22% 92%;
+    --muted-foreground: 36 10% 42%;
+    --accent: 43 72% 42%;
+    --accent-foreground: 40 24% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 72% 42%;
+    --input: 36 22% 92%;
+    --ring: 43 72% 42%;
+    --radius: 0.625rem;
+
+    /* Custom ZAKARIA Tokens - LIGHT THEME */
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+    --bg-primary: #F8F5EF;
+    --bg-secondary: #F0EBE1;
+    --bg-dark: #1A1714;
+    --bg-gold: #B8941F;
+    --bg-cream: #F8F5EF;
+
+    --text-primary: #1A1714;
+    --text-secondary: #7A7265;
+    --text-gold: #A07D15;
+    --text-dark: #1A1714;
+
+    --accent-gold: #B8941F;
+    --accent-gold-light: #D4AF37;
+    --accent-gold-dark: #8A6E15;
+    --accent-olive: #5A6F32;
+    --accent-amber: #A67020;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(184, 148, 31, 0.25);
+    color: var(--text-primary);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .gold-border-strong {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .gold-glow {
+    box-shadow: 0 -20px 60px rgba(212, 175, 55, 0.08);
+  }
+
+  .gold-glow-strong {
+    box-shadow: 0 -30px 80px rgba(212, 175, 55, 0.15);
+  }
+
+  .section-padding {
+    padding: 120px 80px;
+  }
+
+  .content-max-width {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .content-narrow {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .content-wide {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .golden-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+    opacity: 0.4;
+  }
+
+  .golden-line-short {
+    height: 1px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 24px;
+  }
+}
