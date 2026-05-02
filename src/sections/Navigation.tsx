@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { ShoppingCart } from 'lucide-react'
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { CartDropdown } from '@/components/CartDropdown'
+import { useCart } from '@/context/CartContext'
 
 const navLinks = [
   { label: 'Herkunft', href: '#herkunft' },
@@ -11,8 +15,11 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
+  const { items } = useCart()
+  const cartCount = items.length
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,35 +108,86 @@ export default function Navigation() {
           >
             Shop
           </a>
+          <Dialog open={cartOpen} onOpenChange={setCartOpen}>
+            <DialogTrigger asChild>
+              <button
+                className="nav-item opacity-0 relative p-2 hover:opacity-80 transition-opacity"
+                aria-label="Warenkorb"
+              >
+                <ShoppingCart
+                  size={20}
+                  style={{ color: '#B8941F' }}
+                />
+                {cartCount > 0 && (
+                  <span
+                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold text-white"
+                    style={{ backgroundColor: '#B8941F' }}
+                  >
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md">
+              <CartDropdown />
+            </DialogContent>
+          </Dialog>
         </div>
 
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          <span
-            className="w-6 h-[1.5px] transition-all duration-300"
-            style={{
-              backgroundColor: '#B8941F',
-              transform: menuOpen ? 'rotate(45deg) translateY(4px)' : 'none',
-            }}
-          />
-          <span
-            className="w-6 h-[1.5px] transition-all duration-300"
-            style={{
-              backgroundColor: '#B8941F',
-              opacity: menuOpen ? 0 : 1,
-            }}
-          />
-          <span
-            className="w-6 h-[1.5px] transition-all duration-300"
-            style={{
-              backgroundColor: '#B8941F',
-              transform: menuOpen ? 'rotate(-45deg) translateY(-4px)' : 'none',
-            }}
-          />
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <Dialog open={cartOpen} onOpenChange={setCartOpen}>
+            <DialogTrigger asChild>
+              <button
+                className="relative p-2 hover:opacity-80 transition-opacity"
+                aria-label="Warenkorb"
+              >
+                <ShoppingCart
+                  size={20}
+                  style={{ color: '#B8941F' }}
+                />
+                {cartCount > 0 && (
+                  <span
+                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold text-white"
+                    style={{ backgroundColor: '#B8941F' }}
+                  >
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md">
+              <CartDropdown />
+            </DialogContent>
+          </Dialog>
+
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span
+              className="w-6 h-[1.5px] transition-all duration-300"
+              style={{
+                backgroundColor: '#B8941F',
+                transform: menuOpen ? 'rotate(45deg) translateY(4px)' : 'none',
+              }}
+            />
+            <span
+              className="w-6 h-[1.5px] transition-all duration-300"
+              style={{
+                backgroundColor: '#B8941F',
+                opacity: menuOpen ? 0 : 1,
+              }}
+            />
+            <span
+              className="w-6 h-[1.5px] transition-all duration-300"
+              style={{
+                backgroundColor: '#B8941F',
+                transform: menuOpen ? 'rotate(-45deg) translateY(-4px)' : 'none',
+              }}
+            />
+          </button>
+        </div>
       </div>
 
       {menuOpen && (

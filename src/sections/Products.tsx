@@ -1,6 +1,8 @@
 import { useEffect, useRef, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { toast } from 'sonner'
+import { useCart } from '@/context/CartContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,6 +40,12 @@ function ProductCard({ product }: { product: typeof products[0] }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const tiltRef = useRef({ x: 0, y: 0, currentX: 0, currentY: 0 })
   const rafRef = useRef<number>(0)
+  const { addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    addToCart(product.name, product.name, product.price)
+    toast.success(`${product.name} zum Warenkorb hinzugefügt`)
+  }
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current
@@ -140,6 +148,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
           </div>
 
           <button
+            onClick={handleAddToCart}
             className="w-full font-body text-[13px] uppercase tracking-[1.5px] font-medium py-3 rounded-pill transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(184,148,31,0.35)]"
             style={{ backgroundColor: '#B8941F', color: '#F8F5EF' }}
           >

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { CartProvider } from './context/CartContext'
 import Preloader from './sections/Preloader'
 import Navigation from './sections/Navigation'
 import Hero from './sections/Hero'
@@ -9,12 +10,13 @@ import Origin from './sections/Origin'
 import Products from './sections/Products'
 import Quality from './sections/Quality'
 import Philosophy from './sections/Philosophy'
+import Checkout from './sections/Checkout'
 import Footer from './sections/Footer'
 import ScrollProgress from './components/ScrollProgress'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function App() {
+function AppContent() {
   const [isLoading, setIsLoading] = useState(true)
   const lenisRef = useRef<Lenis | null>(null)
 
@@ -62,8 +64,17 @@ export default function App() {
         <Products />
         <Quality />
         <Philosophy />
+        <Checkout />
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
   )
 }
