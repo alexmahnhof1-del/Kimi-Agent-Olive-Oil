@@ -154,7 +154,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         className="font-display text-5xl mb-12 tracking-wide"
         style={{ color: '#B8941F' }}
       >
-        ZAKARIA
+        ZAKARIYA
       </h1>
       <canvas
         ref={canvasRef}
