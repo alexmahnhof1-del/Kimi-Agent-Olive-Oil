@@ -68,7 +68,7 @@ export default function Navigation() {
           className="font-display text-2xl tracking-wide nav-item opacity-0"
           style={{ color: '#B8941F' }}
         >
-          ZAKARIA
+          ZAKARIYA
         </a>
 
         <div ref={linksRef} className="hidden md:flex items-center gap-10">
