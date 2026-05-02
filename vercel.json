@@ -1,7 +1,5 @@
 {
-  "buildCommand": "cd app && npm run build",
-  "outputDirectory": "app/dist",
-  "devCommand": "cd app && npm run dev",
+  "rootDirectory": "app",
   "framework": "vite",
   "rewrites": [
     {
