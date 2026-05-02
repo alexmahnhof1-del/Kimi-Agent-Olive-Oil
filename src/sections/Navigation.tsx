@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { ShoppingCart } from 'lucide-react'
+import { ShoppingCart, MessageCircle } from 'lucide-react'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { CartDropdown } from '@/components/CartDropdown'
 import { useCart } from '@/context/CartContext'
@@ -95,18 +95,17 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="#produkte"
-            onClick={(e) => {
-              e.preventDefault()
-              scrollToSection('#produkte')
-            }}
-            className="nav-item opacity-0 font-body text-[13px] uppercase tracking-[1.5px] font-medium px-9 py-3.5 rounded-pill transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_4px_20px_rgba(184,148,31,0.35)]"
+            href="https://wa.me/4915218585508"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-item opacity-0 flex items-center gap-2 font-body text-[13px] uppercase tracking-[1.5px] font-medium px-6 py-3.5 rounded-pill transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_4px_20px_rgba(184,148,31,0.35)]"
             style={{
               backgroundColor: '#B8941F',
               color: '#F8F5EF',
             }}
           >
-            Shop
+            <MessageCircle size={16} />
+            WhatsApp
           </a>
           <Dialog open={cartOpen} onOpenChange={setCartOpen}>
             <DialogTrigger asChild>
