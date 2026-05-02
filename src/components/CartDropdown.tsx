@@ -1,5 +1,4 @@
 import { useCart } from '@/context/CartContext'
-import { Button } from '@/components/ui/button'
 import { Trash2, Plus, Minus } from 'lucide-react'
 
 export function CartDropdown() {
