@@ -11,7 +11,7 @@ const footerColumns = [
   },
   {
     title: 'Über uns',
-    links: ['Zakarias Geschichte', 'Die Haine', 'Presse'],
+    links: ['Zakariyas Geschichte', 'Die Haine', 'Presse'],
   },
   {
     title: 'Service',
@@ -19,7 +19,7 @@ const footerColumns = [
   },
   {
     title: 'Kontakt',
-    links: ['hello@zakaria-oil.com', 'Instagram', 'Newsletter'],
+    links: ['hello@zakariya-oil.com', 'Instagram', 'Newsletter'],
   },
 ]
 
@@ -66,7 +66,7 @@ export default function Footer() {
           className="font-display text-[32px]"
           style={{ color: '#D4AF37' }}
         >
-          ZAKARIA
+          ZAKARIYA
         </a>
 
         <nav className="flex flex-wrap gap-6 md:gap-10">
@@ -132,7 +132,7 @@ export default function Footer() {
         }}
       >
         <p className="font-body text-[13px]" style={{ color: '#8A7E66' }}>
-          &copy; 2025 ZAKARIA. Alle Rechte vorbehalten.
+          &copy; 2025 ZAKARIYA. Alle Rechte vorbehalten.
         </p>
         <div className="flex gap-6">
           <a

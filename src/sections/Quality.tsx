@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const images = [
   { src: '/images/quality-pour.jpg', alt: 'Olivenöl wird in eine Schale gegossen', large: true },
-  { src: '/images/quality-zakaria.jpg', alt: 'Zakaria prüft die Ölqualität', large: false },
+  { src: '/images/quality-zakariya.jpg', alt: 'Zakariya prüft die Ölqualität', large: false },
   { src: '/images/quality-landscape.jpg', alt: 'Kretische Landschaft mit Olivenhain', large: false },
 ]
 
@@ -113,7 +113,7 @@ export default function Quality() {
             className="quality-description opacity-0 font-body text-base md:text-[17px] max-w-[640px] mx-auto"
             style={{ color: '#7A7265', lineHeight: 1.65 }}
           >
-            Jede Flasche ZAKARIA wird in kleinen Chargen hergestellt und von Hand abgefüllt. Wir pressen ausschließlich am Tag der Ernte, um den höchsten Polyphenolgehalt zu bewahren. Unser Öl wird nie gefiltert — nur natürlich decantiert, damit jeder Tropfen sein volles Aroma behält.
+            Jede Flasche ZAKARIYA wird in kleinen Chargen hergestellt und von Hand abgefüllt. Wir pressen ausschließlich am Tag der Ernte, um den höchsten Polyphenolgehalt zu bewahren. Unser Öl wird nie gefiltert — nur natürlich decantiert, damit jeder Tropfen sein volles Aroma behält.
           </p>
         </div>
 

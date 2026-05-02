@@ -38,7 +38,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        zakaria: {
+        zakariya: {
           primary: '#F8F5EF',
           secondary: '#F0EBE1',
           dark: '#1A1714',
